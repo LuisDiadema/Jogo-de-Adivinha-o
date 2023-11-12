@@ -4,7 +4,6 @@ int main() {
 
 #define NUMERO_DE_TENTATIVA 3
 
-printf("\n\n");
 printf("          P  /_\\  P                             ");
 printf("         /_\\_|_|_/_\\                           ");
 printf("    n_n | ||.  .|| | n_n          Bem-Vindo ao   ");
@@ -14,26 +13,30 @@ printf("   |_____| ' _ '  |_____|                        ");
 printf("        \\___|_|___//                            ");
 printf("\n\n");
 
+
 int chute;
 int numerosorte = 5;
 
 for(int i = 1; i <= NUMERO_DE_TENTATIVA; i++) {
-printf("Qual e o seu chute? ");
-scanf("%d", &chute);
-printf("Seu chute foi %d\n", chute);
+    printf("Qual e o seu chute? ");
+    scanf("%d", &chute);
+    printf("Seu chute foi %d\n", chute);
 
-    int acertou = chute == numerosorte;
-    int maior = chute > numerosorte;
-    
-    if(acertou) {
-        printf("Voce acertou parabens carnisa.\n");
-        break;
-//Igual o código original porém com ELSE IF.
-    } else if (maior) {
-        printf("seu chute foi maior que o numeor da sorte!.\n");
-        }
-        else {
-         printf("Seu chute foi menor que o numeor da sorte!.\n");
+        int acertou = chute == numerosorte;
+        int maior = chute > numerosorte;
+        int menor =  chute < numerosorte;
+
+// Igual o código original porém com vários IF s.
+
+        if(acertou) {
+            printf("Voce acertou parabens carnisa.\n");
+            break;
+        if (maior) {
+            printf("seu chute foi maior que o numeor da sorte!.\n");
+            }
+        if (menor) {
+            printf("Seu chute foi menor que o numeor da sorte!.\n");
+            }
         }
     }
 }
