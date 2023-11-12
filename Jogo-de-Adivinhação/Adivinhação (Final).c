@@ -16,33 +16,41 @@ printf("\n\n");
 
 
 int chute;
-int numerosorte = 5;
+int numerosorte = 10;
+int ganhou = 0;
+int tentativas = 1;
 
-for(int i = 1; i <= NUMERO_DE_TENTATIVA; i++) {
+while (!ganhou) {
 
-    printf("Qual e o seu chute? ");
-    scanf("%d.", &chute);
-    printf("Seu chute foi %d.\n", chute);
+    printf ( "Qual e o seu chute ?", tentativas);
+    scanf ("%d.", &chute);
+    printf ("Seu chute foi %d\n", chute);
 
-        if (chute < 0) {
-            printf("Nada de numeros negativos Ze Pagao\n");
-            i--;
-            continue;
+    if (chute < 0) {
+        printf ("Nada de numeros negativos Ze Pagao\n");
+        continue;
+    }
+
+    int acertou = chute == numerosorte;
+    int maior = chute > numerosorte;
+    int menor =  chute < numerosorte;
+    
+    if (acertou) {
+        printf("Voce acertou carnisa.\n");
+        ganhou = 1;
+    }
+    if (maior) {
+        printf("seu chute foi maior que o numenor da sorte!.\n");
         }
-
-        int acertou = chute == numerosorte;
-        int maior = chute > numerosorte;
-        int menor =  chute < numerosorte;
-
-        if(acertou) {
-            printf("Voce acertou carnisa.\n");
-            break;
-        if (maior) {
-            printf("seu chute foi maior que o numeor da sorte!.\n");
-            }
-        if (menor) {
-            printf("Seu chute foi menor que o numeor da sorte!.\n");
-            }
+    if (menor) {
+        printf("Seu chute foi menor que o numenor da sorte!.\n");
         }
+        tentativas++;
+    
+    int pontos = 100;
+    int resultado = (chute - numerosorte) / 2;
+    pontos = resultado - pontos;
+    printf ("Voce conseguiu fazer %d. pontos seu ruim!\n", pontos);
+    printf ("Obrigado por jogar!!\n");
     }
 }

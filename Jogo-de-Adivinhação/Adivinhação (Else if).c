@@ -30,10 +30,10 @@ printf("Seu chute foi %d\n", chute);
         break;
 //Igual o código original porém com ELSE IF.
     } else if (maior) {
-        printf("seu chute foi maior que o numeor da sorte!.\n");
+        printf("seu chute foi maior que o numenor da sorte!.\n");
         }
         else {
-         printf("Seu chute foi menor que o numeor da sorte!.\n");
+         printf("Seu chute foi menor que o numenor da sorte!.\n");
         }
     }
 }

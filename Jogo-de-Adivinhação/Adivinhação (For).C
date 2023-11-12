@@ -28,20 +28,18 @@ for(int i = 1; i <= NUMERO_DE_TENTATIVA; i++) {
             i--;
             continue;
         }
-
         int acertou = chute == numerosorte;
+        int menor = chute < numerosorte;
         int maior = chute > numerosorte;
-        int menor =  chute < numerosorte;
-
         if(acertou) {
             printf("Voce acertou carnisa.\n");
             break;
-        if (maior) {
-            printf("seu chute foi maior que o numeor da sorte!.\n");
-            }
-        if (menor) {
-            printf("Seu chute foi menor que o numeor da sorte!.\n");
-            }
+        }
+        if(maior) { 
+            printf("seu chute foi maior que o numenor da sorte!.\n");
+        }
+        if(menor) {
+            printf("Seu chute foi menor que o numenor da sorte!.\n");
         }
     }
 }

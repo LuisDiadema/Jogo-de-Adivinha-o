@@ -26,25 +26,25 @@ while (!ganhou) {
     scanf("%d.", &chute);
     printf("Seu chute foi %d\n", chute);
 
-        if (chute < 0) {
-            printf("Nada de numeros negativos Ze Pagao\n");
-            continue;
-        }
+    if (chute < 0) {
+        printf("Nada de numeros negativos Ze Pagao\n");
+        continue;
+    }
 
-        int acertou = chute == numerosorte;
-        int maior = chute > numerosorte;
-        int menor =  chute < numerosorte;
-
-        if(acertou) {
-            printf("Voce acertou carnisa.\n");
-            ganhou = 1;
-        if (maior) {
-            printf("seu chute foi maior que o numeor da sorte!.\n");
-            }
-        if (menor) {
-            printf("Seu chute foi menor que o numeor da sorte!.\n");
-            }
-            tentativas++;
+    int acertou = chute == numerosorte;
+    int maior = chute > numerosorte;
+    int menor =  chute < numerosorte;
+    
+    if(acertou) {
+        printf("Voce acertou carnisa.\n");
+        ganhou = 1;
         }
+    if (maior) {
+        printf("seu chute foi maior que o numeor da sorte!.\n");
+        }
+    if (menor) {
+        printf("Seu chute foi menor que o numeor da sorte!.\n");
+        }
+        tentativas++;
     }
 }
