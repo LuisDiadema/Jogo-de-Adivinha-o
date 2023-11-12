@@ -13,7 +13,7 @@ int chute;
 int numerosorte = 5;
 
 for(int i = 1; i <= NUMERO_DE_TENTATIVA; i++) {
-
+    
     printf("Qual e o seu chute? ");
     scanf("%d.", &chute);
     printf("Seu chute foi %d.\n", chute);
