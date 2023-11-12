@@ -47,11 +47,4 @@ while (!ganhou) {
             tentativas++;
         }
     }
-    double score = 1000;
-
-    int ponto = (chute - numerosorte) / 2.0;
-    score = score - ponto;
-
-    printf("Voce conseguiu fazer %f pontos seu ruim!\n", score);
-    printf("Obrigado por jogar!!");
 }
