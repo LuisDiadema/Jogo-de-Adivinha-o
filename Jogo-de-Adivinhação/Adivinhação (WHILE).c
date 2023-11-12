@@ -47,7 +47,6 @@ while (!ganhou) {
             tentativas++;
         }
     }
-<<<<<<< HEAD:Jogo-de-Adivinhação/Adivinhação WHILE.c
     double score = 1000;
 
     int ponto = (chute - numerosorte) / 2.0;
@@ -56,6 +55,3 @@ while (!ganhou) {
     printf("Voce conseguiu fazer %f pontos seu ruim!\n", score);
     printf("Obrigado por jogar!!");
 }
-=======
-}
->>>>>>> 903f663b084fd58d0acb1013e4e91dea136e9ce8:Jogo-de-Adivinhação/Adivinhação (WHILE).c
