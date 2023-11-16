@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-int main() {
+#include <time.h>
 
 #define NUMERO_DE_TENTATIVA 3
+
+int main() {
 
 printf("\n\n");
 printf("          P  /_\\  P                             ");
@@ -15,42 +16,62 @@ printf("   |_____| ' _ '  |_____|                        ");
 printf("        \\___|_|___//                            ");
 printf("\n\n");
 
+printf("Qual nivel de dificuldade voce quer jogas\n");
+printf("Facil [1] normal [2] Dificil [3]\n\n");
+printf("Escolhe logo: ");
+
+
+int nivel;
+scanf("%d", &nivel);
+
+int segundo = time(0);
+srand(segundo);
+int numerogrande = rand();
+int numerosorte = numerogrande % 100;
 
 int chute;
-int numerosorte = 42;
-int ganhou = 0;
 int tentativas = 1;
+int totaltentativa;
+double pontos = 1000;
 
-while (!ganhou) {
+if (nivel == 1) {
+    totaltentativa = 20;
+    printf("Bunda mole vamos logo\n\n");
+} else if (nivel == 2 ) {
+    totaltentativa = 10;
+    printf("E da para brincar\n\n");
+} else {
+    totaltentativa = 6;
+    printf("Nao sei para que escolheu eu sei que voce e ruim\n\n");
+}
 
-        printf ( "Qual e o seu chute ?", tentativas);
-        scanf ("%d.", &chute);
-        printf ("Seu chute foi %d\n", chute);
+for(int i = 1; i <= totaltentativa; i++) {
+
+    printf("Tentativa %d de %d\n", i, totaltentativa);
+
+    printf("Qual e o seu chute ?  ", tentativas);
+    scanf("%d.", &chute, "\n\n");
+    printf("Seu chute foi %d\n", chute);
 
         if (chute < 0) {
-            printf ("Nada de numeros negativos Ze Pagao\n");
+            printf("Nada de numeros negativos Ze Pagao\n\n");
             continue;
         }
 
         int acertou = chute == numerosorte;
         int maior = chute > numerosorte;
-        int menor =  chute < numerosorte;
-        
+
         if (acertou) {
-            printf("Voce acertou carnisa.\n");
-            ganhou = 1;
+            printf("Voce acertou\n");
+        } else if (maior) {
+            printf("Seu chute foi maior\n\n");
+        } else {
+            printf("Seu chute foi menor\n\n");
         }
-        if (maior) {
-            printf("seu chute foi maior que o numenor da sorte!.\n");
-            }
-        if (menor) {
-            printf("Seu chute foi menor que o numenor da sorte!.\n");
-            }
             tentativas++;        
     }
-        double pontos = 1000;
-
         double resultado = abs(chute - numerosorte) / 2.0;
+        pontos = pontos - resultado;
 
         printf ("Voce conseguiu fazer %.2f pontos seu ruim!\n", pontos);
         printf ("Obrigado por jogar!!\n");
