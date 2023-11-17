@@ -20,29 +20,32 @@ printf("Qual nivel de dificuldade voce quer jogas\n");
 printf("Facil [1] normal [2] Dificil [3]\n\n");
 printf("Escolhe logo: ");
 
+    int segundo = time(0);
+    srand(segundo);
+    int numerogrande = rand();
+    int numerosorte = numerogrande % 100;
 
-int nivel;
-scanf("%d", &nivel);
+    int chute;
+    int tentativas = 1;
+    int totaltentativa;
+    double pontos = 1000;
 
-int segundo = time(0);
-srand(segundo);
-int numerogrande = rand();
-int numerosorte = numerogrande % 100;
+    int nivel;
+    scanf("%d", &nivel);
 
-int chute;
-int tentativas = 1;
-int totaltentativa;
-double pontos = 1000;
-
-if (nivel == 1) {
-    totaltentativa = 20;
-    printf("Bunda mole vamos logo\n\n");
-} else if (nivel == 2 ) {
-    totaltentativa = 10;
-    printf("E da para brincar\n\n");
-} else {
-    totaltentativa = 6;
-    printf("Nao sei para que escolheu eu sei que voce e ruim\n\n");
+switch (nivel) {
+    case 1:
+        totaltentativa = 20;
+        printf("Mais e muito bunda mole ne ? tinha que escolher o facil!!\n\n");
+        break;
+    case 2:
+        totaltentativa = 10;
+        printf("Normal e para quem tem medo de arriscar!!\n\n");
+        break;
+    case 3:
+        totaltentativa = 5;
+        printf("Nao sei para quer ir no dificil voce e ruim!!\n\n");
+        break;
 }
 
 for(int i = 1; i <= totaltentativa; i++) {
@@ -73,7 +76,14 @@ for(int i = 1; i <= totaltentativa; i++) {
         double resultado = abs(chute - numerosorte) / 2.0;
         pontos = pontos - resultado;
 
-        printf ("Voce conseguiu fazer %.2f pontos seu ruim!\n", pontos);
-        printf ("Obrigado por jogar!!\n");
+        int boa = chute == numerosorte;
+
+        if (boa) {
+            printf ("Pego menos no jogo voce consegue alguma coisa %.2f \n\n", pontos);
+        } else {
+            printf("Minha avo e cega de um olho e faz melhor que isso%.2f \n\n", pontos);
+        }
+        printf ("Obrigado por jogar pato!!\n");
 }
+
 
