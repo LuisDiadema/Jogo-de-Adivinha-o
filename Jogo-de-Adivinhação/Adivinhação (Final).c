@@ -16,12 +16,13 @@ printf("   |_____| ' _ '  |_____|                        ");
 printf("        \\___|_|___//                            ");
 printf("\n\n");
 
-printf("Qual nivel de dificuldade voce quer jogas\n");
+printf("Qual nivel de dificuldade voce quer jogar\n");
 printf("Facil [1] Normal [2] Dificil [3]\n\n");
 printf("Escolhe logo: ");
-
+int acertou;
 int segundo = time(0);
 srand(segundo);
+
 int numerogrande = rand();
 int numerosorte = numerogrande % 100;
 
@@ -48,21 +49,24 @@ scanf("%d", &nivel);
             break;
     }
 
-int acertou = chute == numerosorte;
-int maior = chute > numerosorte;
-
 for(int i = 1; i <= totaltentativa; i++) {
     printf("Tentativa %d de %d\n", i, totaltentativa);
     printf("Qual e o seu chute ?  ", tentativas);
     scanf("%d.", &chute, "\n\n");
-    printf("Seu chute foi %d\n", chute);
+    printf("Seu chute foi \n", chute);
 
         if (chute < 0) {
             printf("Nada de numeros negativos Ze Pagao\n\n");
             i--;
             continue;
         }
-        if (maior) {
+
+        acertou = chute == numerosorte;
+        int maior = chute > numerosorte;
+        if (acertou) {
+            break;
+        }
+        else if (maior) {
             printf("Seu chute foi maior\n\n");
         } else {
             printf("Seu chute foi menor\n\n");
@@ -73,7 +77,8 @@ for(int i = 1; i <= totaltentativa; i++) {
         pontos = pontos - resultado;
 
         if (acertou) {
-            printf ("Pelo menos no jogo voce consegui alguma coisa %.2f \n\n", pontos);
+            printf("Pelo menos no jogo voce conseguiu alguma coisa\n\n");
+            printf("Voce fez %.2f pontos\n\n");
         } else {
             printf("Minha avo e cega de um olho e faz melhor que isso %.2f \n\n", pontos);
             printf("     .-.     ");
