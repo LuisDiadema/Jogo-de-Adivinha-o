@@ -63,6 +63,7 @@ for(int i = 1; i <= totaltentativa; i++) {
 
         acertou = chute == numerosorte;
         int maior = chute > numerosorte;
+
         if (acertou) {
             break;
         }
@@ -78,7 +79,7 @@ for(int i = 1; i <= totaltentativa; i++) {
 
         if (acertou) {
             printf("Pelo menos no jogo voce conseguiu alguma coisa\n\n");
-            printf("Voce fez %.2f pontos\n\n");
+            printf("Voce fez %.2f pontos\n\n", pontos);
         } else {
             printf("Minha avo e cega de um olho e faz melhor que isso %.2f \n\n", pontos);
             printf("     .-.     ");
