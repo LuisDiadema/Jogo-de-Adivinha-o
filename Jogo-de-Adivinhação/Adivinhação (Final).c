@@ -19,17 +19,17 @@ printf("\n\n");
 printf("Qual nivel de dificuldade voce quer jogar\n");
 printf("Facil [1] Normal [2] Dificil [3]\n\n");
 printf("Escolhe logo: ");
+
 int acertou;
 int segundo = time(0);
 srand(segundo);
 
 int numerogrande = rand();
-int numerosorte = numerogrande % 100;
+int numerosorte = numerogrande % 10;
 
 int chute;
 int tentativas = 1;
 int totaltentativa;
-double pontos = 100;
 
 int nivel;
 scanf("%d", &nivel);
@@ -74,6 +74,7 @@ for(int i = 1; i <= totaltentativa; i++) {
         }
             tentativas++;        
     }
+        double pontos = 100;
         double resultado = abs(chute - numerosorte) / 2.0;
         pontos = pontos - resultado;
 
