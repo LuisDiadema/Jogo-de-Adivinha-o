@@ -52,7 +52,7 @@ int main() {
             printf("Tentativa %d de %d\n", i, totaltentativa);
             printf("Qual e o seu chute ?  ", tentativas);
             scanf("%d.", &chute, "\n\n");
-            printf("Seu chute foi \n", chute);
+            printf("Se chute foi %d\n\n", chute);
 
             if (chute < 0) {
                 printf("Nada de numeros negativos Ze Pagao\n\n");
@@ -72,10 +72,10 @@ int main() {
             }
                 tentativas++;        
         }
-        
-        double pontos = 100;
-        double resultado = abs(chute - numerosorte) / 2.0;
-        pontos = pontos - resultado;
+
+        double pontos = 1000;
+        double perdidos = abs(chute - numerosorte) / 2;
+        pontos = pontos - perdidos;
 
         if (acertou) {
             printf("Pelo menos no jogo voce conseguiu alguma coisa\n\n");
