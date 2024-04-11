@@ -78,19 +78,18 @@ int main() {
                 printf("Seu chute foi menor\n\n");
             }
 
-            double perdidos = abs(chute - numerosorte) / 2.0;
+            double perdidos = abs(chute - numerosorte) / 2;
             pontos = pontos - perdidos;
         }
 
         if (acertou) {
-            printf("Pelo menos no jogo voce conseguiu alguma coisa\n\n");
+            printf("Pelo menos um jogo de adivinha voce consegui ganhar :P\n\n");
             printf("Voce fez %.2f pontos\n\n", pontos);
         } else {
             printf("Minha avo e cega de um olho e faz melhor que isso %.2f \n\n", pontos);
             printf("     .-.     \n");
             printf("     |U|     \n");
-            printf("     | |     \n");
-            printf("     | |     \n");            
+            printf("     | |     \n");          
             printf("     | |     \n");
             printf("    _| |_    \n");
             printf("   | | | |-. \n");
@@ -99,7 +98,6 @@ int main() {
             printf(" |         | \n");
             printf(" \'        / \n");
             printf("  |       |  \n");
-            printf("  |       |  \n");
         }
-        printf ("Obrigado por jogar pato!!\n");
+        printf ("Obrigado por jogar seu fraco!!\n");
     }
